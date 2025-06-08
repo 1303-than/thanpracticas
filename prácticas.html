@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Servicio Automotriz Johnny</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      color: #2c3e50;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #0d47a1;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 20px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background: #1565c0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      display: none;
+    }
+
+    .container.active {
+      display: block;
+    }
+
+    h2 {
+      color: #0d47a1;
+    }
+
+    .servicio {
+      margin-bottom: 30px;
+      padding-left: 15px;
+      border-left: 5px solid #2196f3;
+    }
+
+    .imagenes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .imagenes img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .imagenes img:hover {
+      transform: scale(1.05);
+    }
+
+    .revista-box {
+      background-color: #e3f2fd;
+      padding: 30px;
+      border-radius: 14px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .revista-box a {
+      background: #1976d2;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .revista-box a:hover {
+      background: #0d47a1;
+    }
+
+    .footer {
+      text-align: center;
+      background: #0d47a1;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Servicio Automotriz Johnny</h1>
+    <p>Tu auto merece lo mejor</p>
+  </header>
+
+  <nav>
+    <a onclick="mostrarSeccion('inicio')">Inicio</a>
+    <a onclick="mostrarSeccion('servicios')">Servicios</a>
+    <a onclick="mostrarSeccion('revista')">Revista</a>
+    <a onclick="mostrarSeccion('contacto')">Contacto</a>
+  </nav>
+
+  <!-- Sección: Inicio -->
+  <div class="container active" id="inicio">
+    <h2>Inicio</h2>
+    <p>En <strong>Servicio Automotriz Johnny</strong> nos dedicamos al diagnóstico, mantenimiento y reparación automotriz con un enfoque profesional, transparente y honesto. Nuestro compromiso es brindarte un servicio confiable que garantice el correcto funcionamiento y la seguridad de tu vehículo.</p>
+    <p>Contamos con mecánicos capacitados y herramientas tecnológicas que permiten detectar fallas de forma precisa y rápida. Ya sea que necesites una revisión básica o una reparación mayor, estamos listos para atenderte con calidad y puntualidad.</p>
+    <p>Visítanos en Toluca, Estado de México. ¡Confía tu auto a manos expertas!</p>
+  </div>
+
+  <!-- Sección: Servicios -->
+  <div class="container" id="servicios">
+    <h2>Servicios</h2>
+    <div class="servicio">
+      <h3>Mantenimiento y Reparación</h3>
+      <p>Incluye cambio de aceite, filtros, revisión de frenos, alineación, balanceo, suspensión y corrección de fallas mecánicas.</p>
+    </div>
+
+    <div class="servicio">
+      <h3>Diagnóstico Automotriz</h3>
+      <p>Utilizamos escáneres avanzados y herramientas electrónicas para identificar fallas rápidamente en sistemas eléctricos y electrónicos.</p>
+    </div>
+
+    <div class="imagenes">
+      <img src="https://via.placeholder.com/300x200?text=Motor+en+revisión" alt="Motor en revisión">
+      <img src="https://via.placeholder.com/300x200?text=Diagnóstico+computarizado" alt="Diagnóstico computarizado">
+      <img src="https://via.placeholder.com/300x200?text=Revisión+eléctrica" alt="Revisión eléctrica">
+    </div>
+  </div>
+
+  <!-- Sección: Revista -->
+  <div class="container" id="revista">
+    <h2>Revista Digital</h2>
+    <div class="revista-box">
+      <p>Descubre promociones, noticias del taller, recomendaciones automotrices y más contenido útil en nuestra revista digital.</p>
+      <a href="https://www.canva.com/design/DAGl9aymlNA/tb6l5ejXGCwG0zev-Cv2hg/watch?utm_content=DAGl9aymlNA&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h9966541aa3" target="_blank">
+        Ver Revista
+      </a>
+    </div>
+  </div>
+
+  <!-- Sección: Contacto -->
+  <div class="container" id="contacto">
+    <h2>Contacto</h2>
+    <p><strong>Encargado:</strong> Salvador Sánchez Bernal</p>
+    <p><strong>Correo:</strong> <a href="mailto:automotrizjohnny@gmail.com">automotrizjohnny@gmail.com</a></p>
+    <p><strong>Teléfono:</strong> <a href="tel:+527222426630">(722) 242-6630</a></p>
+    <p>Ubicados en Toluca, Estado de México. Llámanos o mándanos un correo para agendar tu cita.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>Creado por Thania Morales Alamo - 2025</p>
+  </div>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.container');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>

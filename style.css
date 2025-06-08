@@ -1,0 +1,755 @@
+body {
+  font: 15px/1.6 Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+  /* Centrar el contenido principal del body si es necesario */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente el contenido del body */
+}
+
+/* Global */
+.container {
+  width: 90%;
+  margin: auto; /* Mantiene el contenedor centrado */
+  overflow: hidden;
+  padding: 15px 0;
+  /* El container ya estaba centrado con margin: auto, pero lo confirmamos */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.button_1 {
+  height: 38px;
+  background: #6a059c;
+  border: none;
+  padding: 0 20px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.button_1:hover {
+  background-color: #4a036c;
+  transform: translateY(-1px);
+}
+
+.dark {
+  padding: 18px;
+  background: #34495e;
+  color: #ffffff;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Asegura que el texto dentro de .dark también esté centrado */
+}
+
+.dark-text {
+  color: #35424a;
+  font-style: italic;
+  padding: 8px;
+  background-color: #e0e0e0;
+  border-left: 4px solid #6a059c;
+  margin-bottom: 15px;
+  text-align: center; /* Centrar el texto para este bloque */
+}
+
+/* Header */
+header {
+  background: #2c3e50;
+  color: #ffffff;
+  padding-top: 15px;
+  min-height: 70px;
+  border-bottom: #6a059c 3px solid;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%; /* Asegura que el header ocupe todo el ancho */
+  display: flex; /* Habilita flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  align-items: center; /* Centra verticalmente los elementos */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+header .container {
+    width: 90%; /* Mantiene el contenedor del header al 90% */
+    display: flex; /* Habilita flexbox dentro del contenedor */
+    justify-content: space-between; /* Espacio entre el branding y la navegación */
+    align-items: center; /* Alinea verticalmente */
+    flex-wrap: wrap; /* Permite que se envuelva en móvil */
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+header li {
+  /* float: left; Desactivado para flexbox */
+  display: inline-block; /* Usar inline-block para lista en línea con flexbox */
+  padding: 0 20px;
+}
+
+header #branding {
+  /* float: left; Desactivado para flexbox */
+  text-align: center; /* Centra el texto del branding si ocupa todo el ancho */
+  flex-grow: 1; /* Permite que crezca para ocupar espacio */
+  padding-right: 10px; /* Pequeño espacio para evitar que el texto toque el menú */
+}
+
+header #branding h1 {
+  margin: 0;
+  line-height: 1.1;
+}
+
+header nav {
+  /* float: right; Desactivado para flexbox */
+  margin-top: 0; /* Reiniciar el margen que teníamos antes */
+  text-align: center; /* Centra los elementos de la navegación */
+}
+
+header .highlight,
+header .current a {
+  color: #9b59b6;
+  font-weight: bold;
+}
+
+header a:hover {
+  color: #dcdcdc;
+  transform: translateY(-1px);
+}
+
+/* Imágenes Generales */
+.imagen {
+  text-align: center; /* Centra la imagen dentro de su contenedor si es más pequeña que el ancho */
+}
+
+.imagen img {
+  width: 100%;
+  height: auto;
+  display: block; /* Asegura que la imagen se comporte como un bloque para centrado */
+  max-width: 100%;
+  border: 3px solid #9b59b6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  cursor: pointer;
+  margin: 0 auto; /* Centra la imagen si tiene un max-width menor al contenedor */
+}
+
+.image-caption {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* Animaciones de Keyframes */
+@keyframes rotate-scale {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(5deg) scale(1.03); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-12px); }
+  60% { transform: translateY(-6px); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+  20%, 40%, 60%, 80% { transform: translateX(2px); }
+}
+
+@keyframes fade-translate {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flip-y {
+  0% { transform: perspective(400px) rotateY(0deg); }
+  100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+/* Clases para aplicar las animaciones al pasar el mouse (hover) */
+.box.rotate-scale-on-hover img:hover {
+  animation: rotate-scale 1.8s ease-in-out infinite;
+}
+
+.box.bounce-on-hover img:hover {
+  animation: bounce 0.9s infinite;
+}
+
+.box.pulse-on-hover img:hover {
+  animation: pulse 1.3s ease-in-out infinite;
+}
+
+.imagen.shake-on-hover img:hover {
+  animation: shake 0.7s infinite;
+}
+
+.imagen.fade-translate-on-hover img:hover {
+  animation: fade-translate 0.9s forwards;
+}
+
+.imagen.flip-y-on-hover img:hover {
+  animation: flip-y 1.8s linear infinite;
+}
+
+/* Estilos para el Slideshow */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 25px auto; /* Centra el slideshow */
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.mySlides {
+  display: none;
+  width: 100%;
+  text-align: center; /* Centra el contenido dentro de la diapositiva */
+}
+
+.mySlides img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  animation: fadeIn 1.2s ease-in-out;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+.text {
+  color: #f9f9f9;
+  font-size: 18px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0 0 10px 10px;
+}
+
+/* Navegación del slideshow */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 15px;
+  margin-top: -20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.5s ease;
+  border-radius: 0 4px 4px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.next {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Newsletter Section */
+#newsletter-home, #newsletter-about {
+  padding: 15px;
+  color: #ffffff;
+  background: #35424a;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+#newsletter-home h1, #newsletter-about h1 {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+}
+
+#newsletter-home form input[type="email"],
+#newsletter-about form input[type="email"] {
+  padding: 10px;
+  height: 38px;
+  width: 250px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#newsletter-home form button,
+#newsletter-about form button {
+  vertical-align: top; /* Alinea el botón con el input */
+}
+
+/* Boxes Section */
+#boxes-home {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#boxes-home .box {
+  float: left;
+  text-align: center;
+  width: 30%;
+  padding: 15px;
+  margin: 0 1.5%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+  transition: transform 0.3s ease-in-out;
+}
+
+#boxes-home .box img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #6a059c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  margin-bottom: 10px;
+}
+
+#boxes-home .box h3 {
+  color: #35424a;
+  margin-bottom: 10px;
+}
+
+#boxes-home .box p {
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* About Section */
+#about-section {
+  padding: 20px 0;
+  background-color: #f8f8f8;
+}
+
+#main-about {
+  padding-top: 20px;
+}
+
+#main-col-about {
+  float: left;
+  width: 65%;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+#sidebar-about {
+  float: right;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+#main-col-about .page-title {
+  color: #35424a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #6a059c;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#main-col-about p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+#sidebar-about .dark {
+  background: #34495e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#sidebar-about .dark h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+#sidebar-about .dark a {
+  color: #9b59b6;
+  text-decoration: underline;
+  word-wrap: break-word; /* Permite que el texto largo se rompa */
+  display: block; /* Asegura que el enlace ocupe su propio espacio */
+  font-size: 15px;
+}
+
+#sidebar-about .dark a:hover {
+  color: #dcdcdc;
+}
+
+/* Services Section */
+#services-section {
+  padding: 20px 0;
+  background-color: #ffffff;
+}
+
+#main-col-services {
+  float: left;
+  width: 65%;
+  padding-right: 30px;
+  box-sizing: border-box;
+}
+
+#sidebar-services {
+  float: right;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+#main-col-services .page-title {
+  color: #35424a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #6a059c;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+#services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#services-list li {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+#services-list li:hover {
+  transform: translateY(-5px);
+}
+
+#services-list li h3 {
+  color: #6a059c;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
+  text-align: center; /* Centra el título del servicio */
+}
+
+#services-list li p {
+  color: #555;
+  line-height: 1.6;
+  text-align: center; /* Centra el texto del servicio */
+  margin-bottom: 15px;
+}
+
+#services-list .service-image img {
+  max-width: 100%;
+  height: 200px; /* Altura fija para las imágenes de servicio */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 8px;
+  border: 2px solid #9b59b6;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  margin-top: 10px;
+}
+
+#sidebar-services .dark {
+  background: #34495e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#sidebar-services .dark h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#sidebar-services .quote div {
+  margin-bottom: 15px;
+}
+
+#sidebar-services .quote label {
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#sidebar-services .quote input[type="text"],
+#sidebar-services .quote input[type="email"],
+#sidebar-services .quote textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+#sidebar-services .quote textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#sidebar-services .quote .button_1 {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Contact Section */
+#contact-section {
+  padding: 20px 0;
+  background-color: #f8f8f8; /* Un color de fondo ligeramente diferente */
+}
+
+#main-col-contact {
+  float: left;
+  width: 65%; /* Mantiene el ancho de la columna principal */
+  padding-right: 30px;
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+#sidebar-contact {
+  float: right;
+  width: 30%; /* Mantiene el ancho de la barra lateral */
+  box-sizing: border-box;
+}
+
+#contact-section .page-title {
+  color: #35424a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #6a059c;
+  padding-bottom: 10px;
+  text-align: center; /* Centra el título de la sección */
+}
+
+#contact-section p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+  text-align: justify; /* Justifica el texto para una mejor lectura */
+}
+
+.contact-info {
+  margin-top: 25px;
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #e0e0e0;
+  border-left: 4px solid #9b59b6;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info li h3 {
+  margin: 0 0 8px 0;
+  color: #6a059c;
+  font-size: 18px;
+}
+
+.contact-info li p {
+  margin: 0;
+  color: #555;
+  text-align: left; /* Alinea el texto a la izquierda para la información de contacto */
+}
+
+/* Estilos específicos para el formulario de contacto en la barra lateral */
+#sidebar-contact .dark {
+  background: #34495e;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Centra el contenido del formulario */
+}
+
+#sidebar-contact .dark h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+#sidebar-contact .quote div {
+  margin-bottom: 15px;
+}
+
+#sidebar-contact .quote label {
+  display: block;
+  text-align: left; /* Alinea las etiquetas a la izquierda */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#sidebar-contact .quote input[type="text"],
+#sidebar-contact .quote input[type="email"],
+#sidebar-contact .quote textarea {
+  width: calc(100% - 22px); /* Ajusta el ancho para el padding */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+#sidebar-contact .quote textarea {
+  min-height: 100px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+#sidebar-contact .quote .button_1 {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  margin-top: 20px;
+  color: #ffffff;
+  background-color: #35424a;
+  text-align: center;
+  border-top: #6a059c 3px solid;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header #branding,
+  header nav,
+  header #branding h1 {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  header nav ul li {
+    padding: 10px 15px;
+  }
+
+  #newsletter-home form input[type="email"],
+  #newsletter-about form input[type="email"] {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  #newsletter-home form button,
+  #newsletter-about form button {
+    width: 80%;
+  }
+
+  #boxes-home .box {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  #main-col-about,
+  #sidebar-about,
+  #main-col-services,
+  #sidebar-services,
+  #main-col-contact,
+  #sidebar-contact {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  #main-col-about .page-title,
+  #main-col-services .page-title,
+  #main-col-contact .page-title {
+    text-align: center;
+  }
+
+  .contact-info li p {
+    text-align: center;
+  }
+
+  #sidebar-services .quote input[type="text"],
+  #sidebar-services .quote input[type="email"],
+  #sidebar-services .quote textarea,
+  #sidebar-contact .quote input[type="text"],
+  #sidebar-contact .quote input[type="email"],
+  #sidebar-contact .quote textarea {
+    width: calc(100% - 22px); /* Ajusta el ancho para el padding en móvil también */
+  }
+}
